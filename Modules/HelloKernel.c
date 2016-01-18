@@ -3,6 +3,8 @@
 
 #include <linux/moduleparam.h>
 
+MODULE_AUTHOR("Chakraphan");
+
 //int param_var = 0;
 int param_var[3] = { 0,0,0 };
 
@@ -14,13 +16,13 @@ void display(void) {
 	printk(KERN_ALERT "Testing input param value : %d\n", param_var[2]);
 }
 
-static int helloKernel_init(void) {
+static int __init helloKernel_init(void) {
 	printk(KERN_ALERT "Hello Kernel, this is not a test.\n");
 	display();
 	return 0;
 }
 
-static void helloKernel_exit(void) {
+static void __exit helloKernel_exit(void) {
 	printk(KERN_ALERT "Good bye Kernel, see you in your dream.\n");
 }
 
