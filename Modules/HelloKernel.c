@@ -17,13 +17,13 @@ void display(void) {
 }
 
 static int __init helloKernel_init(void) {
-	printk(KERN_ALERT "Hello Kernel, this is not a test.\n");
+	printk(KERN_INFO "Hello Kernel, this is not a test.\n");
 	display();
 	return 0;
 }
 
 static void __exit helloKernel_exit(void) {
-	printk(KERN_ALERT "Good bye Kernel, see you in your dream.\n");
+	printk(KERN_INFO "Good bye Kernel, see you in your dream.\n");
 }
 
 module_init(helloKernel_init);
